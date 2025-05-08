@@ -1,0 +1,4 @@
+(rule
+ (alias devserver)
+ (action
+  (run bin/main.exe)))

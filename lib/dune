@@ -1,0 +1,6 @@
+(library
+ (name app)
+ (modules app)
+ (libraries html_of_jsx dream)
+ (preprocess
+   (pps html_of_jsx.ppx -htmx)))
