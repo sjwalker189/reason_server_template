@@ -1,22 +1,10 @@
-let page = (~message, ~path, ()) => {
-  <html>
-    <head> <title> {JSX.string("Hello, world")} </title> </head>
-    <body>
-      <h1> {JSX.string(message)} </h1>
-      <p> {JSX.string("Current path: " ++ path)} </p>
-    </body>
-  </html>;
-};
-
-let home = req => {
-  let path = Dream.target(req);
-  let message = "Home page";
-
-  JSX.render(<page message path />) |> Dream.html;
-};
-
-let () =
+let () = {
   Dream.run @@
   Dream.logger @@
-  Dream_livereload.inject_script() @@
-  Dream.router([Dream.get("/", home), Dream_livereload.route()]);
+  Dream.router([
+    Dream.get("/", App.Handlers.Home.welcome),
+    Dream.get("/about", App.Handlers.Home.about),
+    Dream.get("/contact", App.Handlers.Home.contact),
+    Dream.get("/services", App.Handlers.Home.services),
+  ]);
+};

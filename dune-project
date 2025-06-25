@@ -1,4 +1,4 @@
-(lang dune 3.18)
+(lang dune 3.19)
 
 (name app)
 
@@ -19,7 +19,12 @@
  (name app)
  (synopsis "A short synopsis")
  (description "A longer description")
- (depends ocaml)
+ (depends
+   ocaml
+   dune
+   html_of_jsx
+   dream
+  )
  (tags
   ("add topics" "to describe" your project)))
 

@@ -1,6 +1,8 @@
+(include_subdirs qualified)
 (library
  (name app)
- (modules app)
+ (public_name app)
  (libraries html_of_jsx dream)
  (preprocess
    (pps html_of_jsx.ppx -htmx)))
+

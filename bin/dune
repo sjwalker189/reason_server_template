@@ -1,6 +1,5 @@
 (executable
- (public_name app)
  (name main)
- (libraries app html_of_jsx dream dream-livereload)
+ (libraries app html_of_jsx dream)
  (preprocess
-   (pps html_of_jsx.ppx -htmx)))
+  (pps html_of_jsx.ppx -htmx)))
